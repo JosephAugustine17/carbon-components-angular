@@ -1,4 +1,20 @@
-import "./polyfills.js";
+import "core-js/es6/symbol";
+import "core-js/es6/object";
+import "core-js/es6/function";
+import "core-js/es6/parse-int";
+import "core-js/es6/parse-float";
+import "core-js/es6/number";
+import "core-js/es6/math";
+import "core-js/es6/string";
+import "core-js/es6/date";
+import "core-js/es6/array";
+import "core-js/es6/regexp";
+import "core-js/es6/map";
+import "core-js/es6/set";
+import "core-js/es6/reflect";
+
+import "core-js/es7/reflect";
+import "zone.js/dist/zone";
 
 import { configure, addDecorator } from "@storybook/angular";
 import { withOptions } from '@storybook/addon-options';
@@ -12,6 +28,7 @@ addDecorator(
 
 // load global styles
 require("!style-loader!css-loader!postcss-loader!sass-loader!./preview.scss");
+require("!style-loader!css-loader!postcss-loader!sass-loader!./preview-experimental.scss");
 
 require("../src/index.stories");
 // automatically import all files ending in *.stories.ts
