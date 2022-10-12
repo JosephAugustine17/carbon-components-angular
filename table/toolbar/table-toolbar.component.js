@@ -35,14 +35,18 @@ var TableToolbar = /** @class */ (function () {
     });
     Object.defineProperty(TableToolbar.prototype, "count", {
         get: function () {
-            return this.model.totalDataLength > 0 ? this.model.rowsSelected.reduce(function (previous, current) { return previous + (current ? 1 : 0); }, 0) : 0;
+            return this.model.rowsSelected > 0 ? this.model.rowsSelected.reduce(function (previous, current) { return previous + (current ? 1 : 0); }, 0) : 0;
+
+//            return this.model.totalDataLength > 0 ? this.model.rowsSelected.reduce(function (previous, current) { return previous + (current ? 1 : 0); }, 0) : 0;
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(TableToolbar.prototype, "selected", {
         get: function () {
-            return this.model.totalDataLength > 0 ? this.model.rowsSelected.some(function (item) { return item; }) : false;
+            return this.model.rowsSelected > 0 ? this.model.rowsSelected.some(function (item) { return item; }) : false;
+            //return this.model.totalDataLength > 0 ? this.model.rowsSelected.some(function (item) { return item; }) : false;
+
         },
         enumerable: true,
         configurable: true
